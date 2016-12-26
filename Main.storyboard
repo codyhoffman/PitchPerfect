@@ -22,21 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swc-yq-Lc1">
-                                <rect key="frame" x="110" y="256" width="155" height="155"/>
-                                <state key="normal" image="Record"/>
-                                <connections>
-                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yDg-aK-Rix"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record!" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aj-RS-DJW">
-                                <rect key="frame" x="131.5" y="419" width="112" height="21"/>
+                                <rect key="frame" x="131" y="378" width="112" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.018683349577769071" green="1" blue="0.89817021095996141" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zw-Iy-Ifp">
-                                <rect key="frame" x="155" y="455" width="64" height="64"/>
+                                <rect key="frame" x="155" y="407" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="UNM-BK-NID"/>
                                     <constraint firstAttribute="height" constant="64" id="hDI-I9-b3q"/>
@@ -46,15 +39,22 @@
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJO-st-YWm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swc-yq-Lc1">
+                                <rect key="frame" x="110" y="215" width="155" height="155"/>
+                                <state key="normal" image="Record"/>
+                                <connections>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yDg-aK-Rix"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="6Zw-Iy-Ifp" firstAttribute="centerX" secondItem="swc-yq-Lc1" secondAttribute="centerX" id="9hk-AE-Aht"/>
                             <constraint firstItem="swc-yq-Lc1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gjt-xe-KyR"/>
-                            <constraint firstItem="6Zw-Iy-Ifp" firstAttribute="top" secondItem="swc-yq-Lc1" secondAttribute="bottom" constant="44" id="RhX-68-XHk"/>
+                            <constraint firstItem="6Zw-Iy-Ifp" firstAttribute="top" secondItem="swc-yq-Lc1" secondAttribute="bottom" constant="37" id="RhX-68-XHk"/>
                             <constraint firstItem="4aj-RS-DJW" firstAttribute="centerX" secondItem="swc-yq-Lc1" secondAttribute="centerX" id="Uvp-lb-GYB"/>
                             <constraint firstItem="4aj-RS-DJW" firstAttribute="top" secondItem="swc-yq-Lc1" secondAttribute="bottom" constant="8" id="bBh-GJ-dhe"/>
-                            <constraint firstItem="swc-yq-Lc1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dTo-h8-0I6"/>
+                            <constraint firstItem="swc-yq-Lc1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-41" id="dTo-h8-0I6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dPj-fY-M2Q"/>
