@@ -18,6 +18,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stopRecordingButton.isEnabled = false
@@ -27,12 +28,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         stopRecordingButton.isEnabled = false
+        recordingButton.imageView?.contentMode = .scaleAspectFit
+        stopRecordingButton.imageView?.contentMode = .scaleAspectFit
     }
 
     @IBAction func recordAudio(_ sender: Any) {
-        recordingLabel.text = "Recording!"
-        stopRecordingButton.isEnabled = true
-        recordingButton.isEnabled = false
+        setUIState(isRecording: false, recordingText: "Recording!")
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -50,9 +51,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func stopRecording(_ sender: Any) {
-        recordingButton.isEnabled = true
-        stopRecordingButton.isEnabled = false
-        recordingLabel.text = "Tap to Record!"
+        setUIState(isRecording: true, recordingText: "Tap to Record")
         
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
@@ -74,6 +73,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             let recordedAudioURL = sender as! URL
             playSoundsVC.recordedAudioURL = recordedAudioURL
         }
+    }
+    
+    func setUIState(isRecording: Bool, recordingText: String) {
+        // Determines when the Record/Stop buttons are active
+        // and sets the text message accordingly
+        recordingLabel.text = recordingText
+        recordingButton.isEnabled = isRecording
+        stopRecordingButton.isEnabled = !isRecording
     }
 }
 

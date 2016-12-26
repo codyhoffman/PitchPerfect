@@ -3,7 +3,8 @@
 //  PitchPerfect
 //
 //  Copyright© 2016 Udacity. All rights reserved.
-//  This extension was modified by Cody Hoffman 12/21/16.
+//  This extension was NOT written by Cody Hoffman. 
+//  Imported to the project on 12/21/16.
 //
 
 import UIKit
